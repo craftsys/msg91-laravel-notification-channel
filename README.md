@@ -6,6 +6,8 @@
 composer require craftsys/msg91-laravel-notification-channel
 ```
 
+> If you just want to integrate Msg91 api in Laravel without notification channel, please use [Msg91 Laravel][client-laravel] instead.
+
 ## Configuration
 
 Next, you will need to add a few configuration options to your `config/services.php` configuration file. You may copy the example configuration below to get started:
@@ -17,7 +19,7 @@ Next, you will need to add a few configuration options to your `config/services.
 ]
 ```
 
-All available configuration can be found at [msg91-php client's configuration page][client]
+All available configuration can be found at [msg91-php client's configuration page][client-configuration]
 
 ## Usage
 
@@ -47,6 +49,13 @@ public function toMsg91($notifiable)
 
 When sending notifications via the `msg91` channel, the notification system will automatically look for a `phone_number` attribute on the notifiable entity. If you would like to customize the phone number the notification is delivered to, define a `routeNotificationForMsg91` method on the entity as suggested on [laravel docs](https://laravel.com/docs/5.8/notifications#routing-sms-notifications).
 
-**NOTE**: The country code must be present. The country code can be included in the phone number itself or can be set when creating the `Msg91Message` message in `toMsg` method or it can be set in the `config/services.php`.
+**NOTE**: Phone number must be in international format i.e. it must include the country code.
 
-[client]: https://github.com/craftsys/msg91-php#configuration
+## Verify OTP
+
+This package include the [Laravel Msg91 Client][client-laravel], so you can use all the api provided by that package
+like verify an OTP, sending otp without using notification channel etc.
+
+[client]: https://github.com/craftsys/msg91-php
+[client-configuration]: https://github.com/craftsys/msg91-php#configuration
+[client-laravel]: https://github.com/craftsys/msg91-laravel
