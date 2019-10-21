@@ -29,8 +29,8 @@ If a notification supports being sent as an SMS, you should define a `toMsg91` m
 // your Notification
 public function toMsg91($notifiable)
 {
-	return (new \Craftsys\Notifications\Messages\Msg91SMS)
-		->content("Message is this");
+    return (new \Craftsys\Notifications\Messages\Msg91SMS)
+        ->content("Message is this");
 }
 ```
 
@@ -40,8 +40,8 @@ public function toMsg91($notifiable)
 // your Notification
 public function toMsg91($notifiable)
 {
-	return (new \Craftsys\Notifications\Messages\Msg91OTP);
-    // ->resend(); // if this is a resend otp notification
+    return (new \Craftsys\Notifications\Messages\Msg91OTP);
+        // ->resend(); // if this is a resend otp notification
 }
 ```
 
