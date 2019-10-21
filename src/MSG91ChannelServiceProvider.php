@@ -8,6 +8,7 @@ use Craftsys\MSG91Client\Client;
 
 class Msg91ChannelServiceProvider extends ServiceProvider
 {
+
     /**
      * Register the service provider.
      *
