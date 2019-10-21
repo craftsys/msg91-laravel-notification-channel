@@ -1,0 +1,65 @@
+{
+  "name": "craftsys/msg91-laravel-notification-channel",
+  "description": "Laravel notification channel for MSG91 apis.",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Sudhir Mitharwal",
+      "email": "luckysud4@gmail.com",
+      "role": "Developer",
+      "homepage": "http://github.com/sudkumar"
+    }
+  ],
+  "keywords": [
+    "msg91",
+    "php",
+    "sms",
+    "laravel",
+    "notification-channel"
+  ],
+  "homepage": "https://github.com/craftsys/msg91-laravel-notification-channel",
+  "support": {
+    "issues": "https://github.com/craftsys/msg91-laravel-notification-channel/issues",
+    "source": "https://github.com/craftsys/msg91-laravel-notification-channel",
+    "email": "luckysud4@gmail.com"
+  },
+  "require": {
+    "php": ">=7.1",
+    "craftsys/msg91-laravel": "^0.5",
+    "illuminate/notifications": "^5.7|^6.0|^7.0"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.0",
+    "phpunit/phpunit": "^8.4"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.x.x-dev"
+    },
+    "laravel": {
+      "providers": [
+        "Craftsys\\Notifications\\Msg91ChannelServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Craftsys\\Notifications\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Craftsys\\Tests\\Notifications\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit  --colors=always"
+  }
+}
