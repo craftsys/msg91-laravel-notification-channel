@@ -5,6 +5,7 @@ namespace Craftsys\Notifications;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\ServiceProvider;
 use Craftsys\MSG91Client\Client;
+use Illuminate\Notifications\ChannelManager;
 
 class Msg91ChannelServiceProvider extends ServiceProvider
 {
