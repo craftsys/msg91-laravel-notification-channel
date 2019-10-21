@@ -2,10 +2,11 @@
 
 namespace Craftsys\Notifications;
 
+use Craftsys\Msg91\Client;
+use Craftsys\Notifications\Channels\Msg91Channel;
+use Illuminate\Notifications\ChannelManager;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\ServiceProvider;
-use Craftsys\Msg91Client\Client;
-use Illuminate\Notifications\ChannelManager;
 
 class Msg91ChannelServiceProvider extends ServiceProvider
 {
@@ -19,8 +20,7 @@ class Msg91ChannelServiceProvider extends ServiceProvider
     {
         Notification::resolved(function (ChannelManager $service) {
             $service->extend('msg91', function ($app) {
-                return new Channels\MSG91Client(
-                    $this->app['config']['services.msg91'],
+                return new Msg91Channel(
                     $this->app->make(Client::class)
                 );
             });
