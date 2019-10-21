@@ -1,6 +1,6 @@
 <?php
 
-namespace Craftsys\MSG91Client\Laravel\Notifications;
+namespace Craftsys\Notifications;
 
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\ServiceProvider;
