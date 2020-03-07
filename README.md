@@ -2,6 +2,13 @@
 
 ## Installation
 
+**prerequisite**
+
+-   php^7.1
+-   laravel^5|^6|^7
+
+The package is tested for 5.8+,^6.0,^7.0 only. If you find any bugs for laravel (5.0< >5.8), please file an issue.
+
 ```bash
 composer require craftsys/msg91-laravel-notification-channel
 ```
