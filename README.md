@@ -1,5 +1,15 @@
 # Laravel Notification Channels For Msg91 SMS Notifications
 
+Laravel notification channel for Msg91 API (wrapper around [Laravel Msg91 Client][client-laravel])
+
+## Table of Contents
+
+-   [Installation](#installation)
+-   [Configuration](#configuration)
+-   [Usage](#usage)
+-   [Related](#related)
+-   [Acknowledgements](#acknowledgements)
+
 ## Installation
 
 **prerequisite**
@@ -63,6 +73,19 @@ When sending notifications via the `msg91` channel, the notification system will
 This package include the [Laravel Msg91 Client][client-laravel], so you can use all the api provided by that package
 like verify an OTP, sending otp without using notification channel etc.
 
+
+# Related
+
+- [Msg91 Php Client](https://github.com/craftsys/msg91-php)
+- [Msg91 Laravel](https://github.com/craftsys/msg91-laravel)
+- [Msg91 Api Docs](https://docs.msg91.com/collection/msg91-api-integration/5/pages/139)
+
+# Acknowledgements
+
+- [Nexmo Laravel Notification Channel](https://github.com/laravel/nexmo-notification-channel)
+
 [client]: https://github.com/craftsys/msg91-php
 [client-configuration]: https://github.com/craftsys/msg91-php#configuration
 [client-laravel]: https://github.com/craftsys/msg91-laravel
+
+
