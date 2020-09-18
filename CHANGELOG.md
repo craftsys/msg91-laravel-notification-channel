@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.3.1...v0.4.0) (2020-09-18)
+
+
+### Features
+
+* **laravel-8:** add support for Laravel 8 ([55b331b](https://github.com/craftsys/msg91-laravel-notification-channel/commit/55b331b021c4d0119d96689382d1c9b7bad13ae8))
+
 ## [0.3.1](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.3.0...v0.3.1) (2020-06-02)
 
 
