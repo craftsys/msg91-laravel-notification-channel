@@ -3,49 +3,91 @@
 namespace Craftsys\Tests\Notifications\Channels;
 
 use Craftsys\Msg91\Client;
-use Craftsys\Msg91\Msg91Message;
 use Craftsys\Notifications\Channels\Msg91Channel;
+use Craftsys\Notifications\Messages\Msg91OTP;
+use Craftsys\Notifications\Messages\Msg91SMS;
 use Craftsys\Tests\Notifications\TestCase;
-use Mockery as m;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Notifications\Notification;
+use GuzzleHttp\Client as HttpClient;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Middleware;
 
 class Msg91ChannelTest extends TestCase
 {
-    public function test_sms_is_send_via_msg91()
+    protected $container = [];
+
+    protected $config = [
+        'key' => '123123123123'
+    ];
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->container = [];
+    }
+
+    public function test_send_sms()
     {
         $notifiable = new Msg91TestNotifiable;
         $notification = new Msg91SMSTestNotification;
 
-        $msg91 = m::mock(Client::class);
-        $channel = new Msg91Channel($msg91);
+        $client = new Client($this->config);
+        $client->setHttpClient($this->createMockHttpClient());
 
-        $msg91->shouldReceive('sms->to->send');
+        $channel = new Msg91Channel($client);
         $channel->send($notifiable, $notification);
+        // make sure there was exacly on request
+        $this->assertCount(1, $this->container);
     }
 
-    public function test_sms_with_string_only_is_send_via_msg91()
-    {
-        $notifiable = new Msg91TestNotifiable;
-        $notification = new Msg91SMSTestNotificationStringReturn;
-
-        $msg91 = m::mock(Client::class);
-        $channel = new Msg91Channel($msg91);
-
-        $msg91->shouldReceive('sms->to->send');
-        $channel->send($notifiable, $notification);
-    }
-
-    public function test_otp_is_send_via_msg91()
+    public function test_send_otp()
     {
         $notifiable = new Msg91TestNotifiable;
         $notification = new Msg91OTPTestNotification;
 
-        $msg91 = m::mock(Client::class);
-        $channel = new Msg91Channel($msg91);
+        $client = new Client($this->config);
+        $client->setHttpClient($this->createMockHttpClient());
 
-        $msg91->shouldReceive('otp->to->send');
+        $channel = new Msg91Channel($client);
         $channel->send($notifiable, $notification);
+
+        // make sure there was exacly on request
+        $this->assertCount(1, $this->container);
+    }
+
+    public function test_resend_otp()
+    {
+        $notifiable = new Msg91TestNotifiable;
+        $notification = new Msg91OTPResendTestNotification;
+
+        $client = new Client($this->config);
+        $client->setHttpClient($this->createMockHttpClient());
+
+        $channel = new Msg91Channel($client);
+        $channel->send($notifiable, $notification);
+
+        // make sure there was exacly on request
+        $this->assertCount(1, $this->container);
+    }
+    protected function createMockHttpClient(
+        $status_code = 200,
+        $body = [
+            "type" => "success", "message" => "Send successfully"
+        ]
+    ): HttpClient {
+        $history = Middleware::history($this->container);
+        $mock = new MockHandler([
+            new Response($status_code, [], json_encode($body)),
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $handler->push($history);
+
+        $client = new HttpClient(['handler' => $handler]);
+        return $client;
     }
 }
 
@@ -60,15 +102,7 @@ class Msg91SMSTestNotification extends Notification
 {
     public function toMsg91($notifiable)
     {
-        return new Msg91Message('this is my message');
-    }
-}
-
-class Msg91SMSTestNotificationStringReturn extends Notification
-{
-    public function toMsg91($notifiable)
-    {
-        return 'this is my message';
+        return (new Msg91SMS('this is my message'))->flow("12123");
     }
 }
 
@@ -76,6 +110,14 @@ class Msg91OTPTestNotification extends Notification
 {
     public function toMsg91($notifiable)
     {
-        return (new Msg91Message)->otp();
+        return (new Msg91OTP)->otp();
+    }
+}
+
+class Msg91OTPResendTestNotification extends Notification
+{
+    public function toMsg91($notifiable)
+    {
+        return (new Msg91OTP)->otp()->resend();
     }
 }

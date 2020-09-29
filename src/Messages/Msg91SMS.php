@@ -2,7 +2,11 @@
 
 namespace Craftsys\Notifications\Messages;
 
-use Craftsys\Msg91\Msg91Message;
+use Craftsys\Msg91\SMS\Options;
 
-class Msg91SMS extends Msg91Message
-{ }
+/**
+ * SMS message
+ */
+class Msg91SMS extends Options
+{
+}

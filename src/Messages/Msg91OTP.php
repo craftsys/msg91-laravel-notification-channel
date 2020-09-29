@@ -2,9 +2,12 @@
 
 namespace Craftsys\Notifications\Messages;
 
-use Craftsys\Msg91\Msg91Message;
+use Craftsys\Msg91\OTP\Options;
 
-class Msg91OTP extends Msg91Message
+/**
+ * OTP message
+ */
+class Msg91OTP extends Options
 {
     /**
      * Are we resending this otp ?
