@@ -11,6 +11,7 @@ Laravel notification channel for Msg91 API (wrapper around [Laravel Msg91 Client
     -   [OTP](#otp)
     -   [Verify OTP](#verify-otp)
     -   [Routing SMS Notifications](#routing-sms-notifications)
+    -   [Advanced Usage](#advanced-usage)
 -   [Related](#related)
 -   [Acknowledgements](#acknowledgements)
 
@@ -117,6 +118,20 @@ public function toMsg91($notifiable)
     return (new \Craftsys\Notifications\Messages\Msg91SMS)
         ->to(91992123123) // you can also pass an array for bulk notifications
         ->flow('your_flow_id');
+}
+```
+
+### Advanced Usage
+
+These messages `Msg91SMS` and `Msg91OTP` extend `\Craftsys\Msg91\SMS\Options` and `\Craftsys\Msg91\OTP\Options`, so all configuration methods are available when crafting your notification message. These are all optional and you can use them in any order. e.g.
+
+```php
+public function toMsg91($notifiable)
+{
+    return (new \Craftsys\Notifications\Messages\Msg91OTP)
+        ->digits(6) // set the digits in otp message
+        ->expiresInMinutes(1) // change the expiry time
+        ->from("SNCBD"); // set a custom sender id
 }
 ```
 
