@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.4.0...v0.4.1) (2020-09-29)
+
+
+### Bug Fixes
+
+* **sms:** sms not working ([b788212](https://github.com/craftsys/msg91-laravel-notification-channel/commit/b788212e6f0139c9315855e866f83b94f18e57d6)), closes [#3](https://github.com/craftsys/msg91-laravel-notification-channel/issues/3)
+
 # [0.4.0](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.3.1...v0.4.0) (2020-09-18)
 
 
