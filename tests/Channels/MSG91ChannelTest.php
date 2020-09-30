@@ -102,7 +102,9 @@ class Msg91SMSTestNotification extends Notification
 {
     public function toMsg91($notifiable)
     {
-        return (new Msg91SMS('this is my message'))->flow("12123");
+        return (new Msg91SMS('this is my message'))
+            ->flow("12123")
+            ->variable('name', 'Sudhir M');
     }
 }
 
