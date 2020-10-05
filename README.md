@@ -50,8 +50,9 @@ If a notification supports being sent as an SMS, you should define a `toMsg91` m
 **NOTE**: Phone number must be in international format i.e. it must include the country code.
 
 
-```
+```php
 <?php
+
 namespace App\Notifications;
 
 use Illuminate\Notifications\Notification;
