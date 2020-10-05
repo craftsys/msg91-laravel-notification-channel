@@ -49,6 +49,46 @@ If a notification supports being sent as an SMS, you should define a `toMsg91` m
 
 **NOTE**: Phone number must be in international format i.e. it must include the country code.
 
+
+```
+<?php
+namespace App\Notifications;
+
+use Illuminate\Notifications\Notification;
+use Craftsys\Notifications\Messages\Msg91SMS
+
+class OrderPicked extends Notification
+{
+  /**
+   * Get the notification's delivery channels.
+   *
+   * @param  mixed  $notifiable
+   * @return array
+   */
+  public function via($notifiable)
+  {
+    // add "msg91" channel to the channels array
+    return ['msg91'];
+  }
+
+  /**
+   * Get the Msg91 / SMS representation of the notification.
+   *
+   * @param  mixed  $notifiable
+   * @return \Craftsys\Notifications\Messages\Msg91SMS
+   */
+  public function toMsg91($notifiable)
+  {
+    return (new Msg91SMS)
+      ->flow('your_flow_id_here')
+      // you can also set variable's values for your flow template
+      // assuming you have ##order_id## variable in the flow
+      ->variable('order_id', $notifiable->latestOrder->id);
+  }
+
+}
+```
+
 ### SMS
 
 ```php
@@ -86,6 +126,13 @@ public function toMsg91($notifiable)
 
 This package include the [Laravel Msg91 Client][client-laravel], so you can use all the api provided by that package
 like verify an OTP, sending otp without using notification channel etc.
+
+You can access the client using `Msg91` facade as follows:
+
+```php
+$otp_to_verify = 112312;
+Msg91::otp($otp_to_verify)->to(919999999998)->verify();
+```
 
 ### Routing SMS Notification
 
