@@ -1,3 +1,10 @@
+## [0.4.3](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.4.2...v0.4.3) (2020-10-20)
+
+
+### Bug Fixes
+
+* **verify-otp:** otp verification throwing invalid auth ([93e4d89](https://github.com/craftsys/msg91-laravel-notification-channel/commit/93e4d89fd454c20a35b034ae951ad6ab48e5159e))
+
 ## [0.4.2](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.4.1...v0.4.2) (2020-09-30)
 
 
