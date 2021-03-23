@@ -1,3 +1,10 @@
+## [0.5.1](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.5.0...v0.5.1) (2021-03-23)
+
+
+### Bug Fixes
+
+* **otp-resend:** install patch from base ([#5](https://github.com/craftsys/msg91-laravel-notification-channel/issues/5)) ([22f1b0a](https://github.com/craftsys/msg91-laravel-notification-channel/commit/22f1b0a763daf8ddce8502b1edca2c6537286470))
+
 # [0.5.0](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.4.3...v0.5.0) (2020-11-11)
 
 
