@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.5.1...v0.6.0) (2021-04-07)
+
+
+### Features
+
+* **octane:** make octane compatible ([#6](https://github.com/craftsys/msg91-laravel-notification-channel/issues/6)) ([465d45f](https://github.com/craftsys/msg91-laravel-notification-channel/commit/465d45f7634542c6ebdb09640f0a122c8afa0ec7))
+
 ## [0.5.1](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.5.0...v0.5.1) (2021-03-23)
 
 
