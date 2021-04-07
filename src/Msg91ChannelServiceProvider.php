@@ -21,7 +21,7 @@ class Msg91ChannelServiceProvider extends ServiceProvider
         Notification::resolved(function (ChannelManager $service) {
             $service->extend('msg91', function ($app) {
                 return new Msg91Channel(
-                    $this->app->make(Client::class)
+                    $app->make(Client::class)
                 );
             });
         });
