@@ -1,3 +1,10 @@
+## [0.6.1](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.6.0...v0.6.1) (2021-08-31)
+
+
+### Bug Fixes
+
+* **php8:** take pull from msg91-laravel ([a4e0c40](https://github.com/craftsys/msg91-laravel-notification-channel/commit/a4e0c403ad4880613513c8c3df38feb80427a621))
+
 # [0.6.0](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.5.1...v0.6.0) (2021-04-07)
 
 
