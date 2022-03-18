@@ -32,7 +32,7 @@ Laravel notification channel for Msg91 API (wrapper around [Laravel Msg91 Client
 -   php^7.1
 -   laravel^5|^6|^7|^8
 
-The package is tested for 5.8+,^6.0,^7.0,^8.0 only. If you find any bugs for laravel (5.0< >5.8), please file an issue.
+The package is tested for 5.8+,^6.0,^7.0,^8.0,^9.0 only. If you find any bugs for laravel (5.0< >5.8), please file an issue.
 
 ```bash
 composer require craftsys/msg91-laravel-notification-channel
