@@ -1,3 +1,10 @@
+## [0.6.2](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.6.1...v0.6.2) (2022-03-18)
+
+
+### Bug Fixes
+
+* **l9:** support for laravel 9 ([6c39811](https://github.com/craftsys/msg91-laravel-notification-channel/commit/6c39811730523067c7054c55b60dc0ef2acbd6fd)), closes [#8](https://github.com/craftsys/msg91-laravel-notification-channel/issues/8)
+
 ## [0.6.1](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.6.0...v0.6.1) (2021-08-31)
 
 
