@@ -1,3 +1,10 @@
+## [0.6.3](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.6.2...v0.6.3) (2023-01-17)
+
+
+### Bug Fixes
+
+* **php-dep:** take the latest laravel client ([ea02eeb](https://github.com/craftsys/msg91-laravel-notification-channel/commit/ea02eeb88bd152ef55a70646a685941f60ac1409))
+
 ## [0.6.2](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.6.1...v0.6.2) (2022-03-18)
 
 
