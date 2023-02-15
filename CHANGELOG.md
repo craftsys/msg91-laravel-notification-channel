@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.6.3...v0.7.0) (2023-02-15)
+
+
+### Features
+
+* **L10:** update for laravel 10 ([#11](https://github.com/craftsys/msg91-laravel-notification-channel/issues/11)) ([d7823b5](https://github.com/craftsys/msg91-laravel-notification-channel/commit/d7823b53b0017b5d514537f14d807a14eebafd74))
+
 ## [0.6.3](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.6.2...v0.6.3) (2023-01-17)
 
 
