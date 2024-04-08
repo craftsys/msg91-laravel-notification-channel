@@ -1,3 +1,10 @@
+## [0.7.1](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.7.0...v0.7.1) (2024-04-08)
+
+
+### Bug Fixes
+
+* **l11:** laravel 11.x Compatibility ([59e85fa](https://github.com/craftsys/msg91-laravel-notification-channel/commit/59e85fa5a1544c47fbbef87b84f55c9fdc9cc94e))
+
 # [0.7.0](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.6.3...v0.7.0) (2023-02-15)
 
 
