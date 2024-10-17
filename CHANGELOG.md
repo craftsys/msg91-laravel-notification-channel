@@ -1,3 +1,10 @@
+## [0.7.2](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.7.1...v0.7.2) (2024-10-17)
+
+
+### Bug Fixes
+
+* **8.2:** update base package for config path fix ([#13](https://github.com/craftsys/msg91-laravel-notification-channel/issues/13)) ([823e18c](https://github.com/craftsys/msg91-laravel-notification-channel/commit/823e18cf233fa75b4479ea6e666b9ac3a1399cc7))
+
 ## [0.7.1](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.7.0...v0.7.1) (2024-04-08)
 
 
