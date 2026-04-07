@@ -1,3 +1,10 @@
+## [0.7.3](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.7.2...v0.7.3) (2026-04-07)
+
+
+### Bug Fixes
+
+* **L12:** add support for laravel 12 ([#15](https://github.com/craftsys/msg91-laravel-notification-channel/issues/15)) ([7a4e61d](https://github.com/craftsys/msg91-laravel-notification-channel/commit/7a4e61d442d7ad7ee19c2b3c8a465ac24b6de3cd))
+
 ## [0.7.2](https://github.com/craftsys/msg91-laravel-notification-channel/compare/v0.7.1...v0.7.2) (2024-10-17)
 
 
